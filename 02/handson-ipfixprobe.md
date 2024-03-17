@@ -5,8 +5,10 @@
 - Download rpms.tar.gz and extract the files
 - Install deb packages from local directory:
 
-`sudo apt update`
-`sudo apt -y install ./*.deb`
+```
+sudo apt update
+sudo apt -y install ./*.deb
+```
 
 ## Test ipfixprobe
 
@@ -33,7 +35,7 @@ Can you compare the results with the handson from the previous lecture?
 
 `nc -lp 4739 | hexdump`
 
-2. Run wireshark lo
+2. Run wireshark, capture on lo (loopback) interface
 
 3. Start ipfixprobe in the second terminal:
 
