@@ -51,3 +51,44 @@ dstport = ...
 flowkey = f"{srcip},{dstip},{proto},{srcport},{dstport}"
 ```
 
+---
+
+# Solution of h-o 3:
+
+```
+#!/usr/bin/python3
+
+import csv
+
+flows_pkts = dict()
+flows_bytes = dict()
+header = True
+
+with open("export.csv", "r") as f:
+    csv_reader = csv.reader(f)
+
+    for row in csv_reader:
+        if header:
+            header = False
+            continue
+
+        srcip = row[2]
+        dstip = row[3]
+        proto = row[4]
+        length = row[5]
+        srcport = row[6]
+        dstport = row[7]
+
+        flowkey = f"{srcip},{dstip},{proto},{srcport},{dstport}"
+        # print(flowkey)
+        if flowkey not in flows_pkts:
+            flows_pkts[flowkey] = 1
+            flows_bytes[flowkey] = int(length)
+        else:
+            flows_pkts[flowkey] += 1
+            flows_bytes[flowkey] += int(length)
+
+for key in flows_pkts:
+    print(key, flows_pkts[key], flows_bytes[key])
+```
+
