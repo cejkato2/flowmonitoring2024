@@ -4,7 +4,7 @@
 
 Uses CSV file from the previous hands-on work.
 
-1. Executable python script, we will need `csv` and `re` modules:
+1. Executable python script, we will need `csv` module:
 
 ```
 #!/usr/bin/python3

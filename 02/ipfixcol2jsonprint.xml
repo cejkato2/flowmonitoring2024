@@ -1,0 +1,37 @@
+<ipfixcol2>
+  <inputPlugins>
+    <input>
+      <name>TCP input</name>
+      <plugin>tcp</plugin>
+      <params>
+        <localPort>4739</localPort>
+        <localIPAddress>
+        </localIPAddress>
+      </params>
+    </input>
+  </inputPlugins>
+  <outputPlugins>
+    <output>
+      <name>JSON output</name>
+      <plugin>json</plugin>
+      <params>
+        <tcpFlags>formatted</tcpFlags>
+        <timestamp>formatted</timestamp>
+        <protocol>formatted</protocol>
+        <ignoreUnknown>true</ignoreUnknown>
+        <ignoreOptions>true</ignoreOptions>
+        <nonPrintableChar>true</nonPrintableChar>
+        <octetArrayAsUint>true</octetArrayAsUint>
+        <numericNames>false</numericNames>
+        <splitBiflow>false</splitBiflow>
+        <detailedInfo>false</detailedInfo>
+        <templateInfo>false</templateInfo>
+        <outputs>
+          <print>
+            <name>stdout</name>
+          </print>
+        </outputs>
+      </params>
+    </output>
+  </outputPlugins>
+</ipfixcol2>

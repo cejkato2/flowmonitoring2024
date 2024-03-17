@@ -1,0 +1,28 @@
+<ipfixcol2>
+  <inputPlugins>
+    <input>
+      <name>TCP input</name>
+      <plugin>tcp</plugin>
+      <params>
+        <localPort>4739</localPort>
+        <localIPAddress>
+        </localIPAddress>
+      </params>
+    </input>
+  </inputPlugins>
+  <outputPlugins>
+    <output>
+      <name>FDS output</name>
+      <plugin>fds</plugin>
+      <params>
+        <storagePath>/tmp/flows/</storagePath>
+        <compression>none</compression>
+        <dumpInterval>
+          <timeWindow>60</timeWindow>
+          <align>yes</align>
+        </dumpInterval>
+        <asyncIO>true</asyncIO>
+      </params>
+    </output>
+  </outputPlugins>
+</ipfixcol2>
